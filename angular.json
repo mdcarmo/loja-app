@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "RestauranteApp": {
+    "Angular7": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/RestauranteApp",
+            "outputPath": "dist/Angular7",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -57,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "RestauranteApp:build"
+            "browserTarget": "Angular7:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "RestauranteApp:build:production"
+              "browserTarget": "Angular7:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "RestauranteApp:build"
+            "browserTarget": "Angular7:build"
           }
         },
         "test": {
@@ -102,7 +103,7 @@
         }
       }
     },
-    "RestauranteApp-e2e": {
+    "Angular7-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "RestauranteApp:serve"
+            "devServerTarget": "Angular7:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "RestauranteApp:serve:production"
+              "devServerTarget": "Angular7:serve:production"
             }
           }
         },
@@ -131,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "RestauranteApp"
+  "defaultProject": "Angular7"
 }

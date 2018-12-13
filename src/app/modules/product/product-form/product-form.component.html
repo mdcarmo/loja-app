@@ -1,0 +1,23 @@
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h3 class="display-4 text-center"><img src="/assets/img/icons8-open-box-64.png"> Produtos.</h3>
+  <p class="lead">{{pageTitle}}</p>
+</div>
+<div class="container">
+  <div class="jumbotron jumbtron-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="productForm" (submit)="submitForm()">
+                <div class="alert alert-danger mt-4" *ngIf="serverErrorMessages">
+                  <strong>Erro no servidor:</strong>
+                  <ul>
+                    <li *ngFor="let error of serverErrorMessages">{{error}}</li>
+                  </ul>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+

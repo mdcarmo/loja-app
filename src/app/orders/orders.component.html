@@ -1,0 +1,38 @@
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h3 class="display-4 text-center"><img src="/assets/img/icons8-shop-64.png"> Vendas.</h3>
+  <p class="lead">Vendas executadas</p>
+</div>
+<div class="container">
+  <div class="jumbotron jumbtron-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><a class="btn btn-outline-success" routerLink="/order"><i class="fa fa-plus-square"></i> Nova Venda</a></p>
+          <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+              <thead class="thead-light">
+                <th>#Order No.</th>
+                <th>Cliente</th>
+                <th>Forma de Pagamento</th>
+                <th>Gasto Total</th>
+                <th></th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of orderList">
+                  <th>{{item.OrderNo}}</th>
+                  <td>{{item.Customer}}</td>
+                  <td>{{item.PMethod}}</td>
+                  <td>{{item.GTotal}}</td>
+                  <td>
+                    <a class="btn text-primary" (click)="openForEdit(item.OrderID)"><i class="fa fa-edit fa-lg"></i></a>
+                    <a class="btn text-danger" (click)="onOrderDelete(item.OrderID)"><i class="fa fa-trash fa-lg"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
