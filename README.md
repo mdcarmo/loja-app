@@ -1,3 +1,10 @@
+#LojaAPP
+
+Aprenda Angular com este exemplo completo de uma loja de produtos, com cadastro de clientes, produtos e 
+vendas.
+
+O Front-End se comunica com um Back-End de serviços construido em .NET CORE e banco de dados SQLITE.
+
 # Angular7
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
