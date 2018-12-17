@@ -1,4 +1,4 @@
-#LojaAPP
+# LojaAPP
 
 Aprenda Angular com este exemplo completo de uma loja de produtos, com cadastro de clientes, produtos e 
 vendas.
