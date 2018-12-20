@@ -1,39 +1,32 @@
-<div class="container">
-  <div class="jumbotron jumbtron-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="px-3 py-3 pt-md-3 pb-md-3">
-          <h3 class="display-5"><img src="/assets/img/icons8-user-groups-64.png"></h3>
-          <p class="lead">Clientes cadastrados</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <p><a class="btn btn-outline-success" routerLink="new"><i class="fa fa-plus-square"></i> Novo</a></p>
-          <div class="table-responsive" *ngIf="orderList?.length">
-            <table class="table table-hover table-bordered table-sm">
-              <thead class="thead-light">
-                <th>#Id.</th>
-                <th>Nome</th>
-                <th></th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of orderList">
-                  <th>{{item.CustomerID}}</th>
-                  <td>{{item.Name}}</td>
-                  <td>
-                    <a class="btn text-primary" [routerLink]="[item.CustomerID, 'edit']"><i class="fa fa-edit fa-lg"></i></a>
-                    <a class="btn text-danger" (click)="onOrderDelete(item.CustomerID)"><i class="fa fa-trash fa-lg"></i></a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="alert alert-warning" role="alert" *ngIf="! orderList?.length">
-            <strong>Atenção!</strong> Não foi encontrado clientes
-          </div>
-        </div>
-      </div>
+<div class="row">
+  <div class="px-3 py-3 pt-md-3 pb-md-3">
+    <h3>Clientes cadastrados</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p><a class="btn btn-outline-success" routerLink="new"><i class="fa fa-plus-square"></i> Novo</a></p>
+    <div class="table-responsive" *ngIf="orderList?.length">
+      <table class="table table-hover table-bordered table-sm">
+        <thead class="thead-light">
+          <th>#Id.</th>
+          <th>Nome</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of orderList">
+            <th>{{item.CustomerID}}</th>
+            <td>{{item.Name}}</td>
+            <td>
+              <a class="btn text-primary" [routerLink]="[item.CustomerID, 'edit']"><i class="fa fa-edit fa-lg"></i></a>
+              <a class="btn text-danger" (click)="onOrderDelete(item.CustomerID)"><i class="fa fa-trash fa-lg"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert-warning" role="alert" *ngIf="! orderList?.length">
+      <strong>Atenção!</strong> Não foi encontrado clientes
     </div>
   </div>
 </div>
