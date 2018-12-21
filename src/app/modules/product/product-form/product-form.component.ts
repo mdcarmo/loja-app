@@ -18,6 +18,15 @@ export class ProductFormComponent implements OnInit, AfterContentChecked {
   customer: Customer = new Customer();
   submittingForm = false;
 
+  imaskConfig = {
+    mask: Number,
+    scale: 2,
+    thousandsSeparator: '',
+    padFractionalZeros: true,
+    normalizeZeros: true,
+    radix: ','
+  };
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -31,7 +40,7 @@ export class ProductFormComponent implements OnInit, AfterContentChecked {
 
   ngOnInit() {
     this.setCurrentAction();
-    this.buildTrainingForm();
+    this.buildProductForm();
   }
 
   private setCurrentAction() {
@@ -51,10 +60,12 @@ export class ProductFormComponent implements OnInit, AfterContentChecked {
     }
   }
 
-  private buildTrainingForm() {
+  private buildProductForm() {
     this.productForm = this.formBuilder.group({
       id: [null],
-      name: [null, [Validators.required, Validators.minLength(2)]]
+      name: [null, [Validators.required, Validators.minLength(2)]],
+      price: [0, [Validators.required]],
+      qtyStock: [0, [Validators.required, Validators.min(1)]]
     });
   }
 
